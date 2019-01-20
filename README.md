@@ -9,3 +9,9 @@ docker-compose run client yarn
 docker-compose run backend bundle exec rails db:create
 docker-compose up
 ```
+
+## Issues
+> docker 1.16 버전부터 bin/bundle 을 생성하고, 다른 binstub 에서도 참조하게 바뀐 문제.
+[exec: \"rails\": exectuable...](https://medium.com/@luzioluna/i-love-this-f2277d15289)
+[same issue above](https://github.com/docker-library/ruby/issues/211)
+[explains](https://github.com/bundler/bundler/pull/6469#issuecomment-383235438)
