@@ -13,6 +13,8 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/vuetify": "^0.5.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
