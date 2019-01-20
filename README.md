@@ -38,3 +38,4 @@ apt-get update && apt-get install curl nano
 [same issue above](https://github.com/docker-library/ruby/issues/211)
 [explains](https://github.com/bundler/bundler/pull/6469#issuecomment-383235438)
 [docker에서 nano 에디터 설치 에러](https://stackoverflow.com/questions/27273412/cannot-install-packages-inside-docker-ubuntu-image)
+[5.2 Rails secret 관련해서](https://medium.com/@fishpercolator/how-to-separate-frontend-backend-with-rails-api-nuxt-js-and-devise-jwt-cf7dd9da9d16)

@@ -281,7 +281,7 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.jwt do |jwt|
-    jwt.secret = Rails.application.secrets.jwt_secret
+    jwt.secret = Rails.application.credentials.jwt_secret
   end
   # ==> Turbolinks configuration
   # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
