@@ -13,6 +13,7 @@
 
 <script>
 export default {
+  middleware: ['auth'], //이녀석이 로그인 안될시 login.vue 로 보내주는 역할을 함.
   data () {
     return {
       examples: []

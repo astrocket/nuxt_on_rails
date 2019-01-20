@@ -7,7 +7,7 @@ class SessionsController < Devise::SessionsController
 
   def show
     if user_signed_in?
-      render json: current_user
+      render json: { user: current_user }
     end
   end
 
