@@ -1,65 +1,31 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        client
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+  <v-layout>
+    <v-flex>
+      <!-- Reactive set of tiles based on 'examples' state -->
+      <v-list>
+        <v-list-title v-for="example in examples" :key="example.id" :class="example.colour">
+          <v-list-title-content>{{example.name}}</v-list-title-content>
+        </v-list-title>
+      </v-list>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-
 export default {
-  components: {
-    AppLogo
+  data () {
+    return {
+      examples: []
+    }
+  },
+  methods: {
+    async updateExamples() {
+      this.examples = await this.$axios.$get('/examples')
+    }
+  },
+  // template 이 initialize 되면 자동으로 호출 되는 함수. 리액트의 componentDidMount Life cycle 인듯함.
+  mounted () {
+    this.updateExamples()
   }
 }
 </script>
-
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
-
